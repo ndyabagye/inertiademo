@@ -1,16 +1,14 @@
 <template>
 	<nav >
-		<ul class="flex list-disk list-inside space-x-4">
+		<ul class="flex space-x-6">
 			<li>
-				<NavLink href="/" :active="$page.url === '/'">Home</NavLink>
-
+				<NavLink href="/" :active="$page.component === 'Home'">Home</NavLink>
 			</li>
 			<li>
-				<NavLink href="/users" :active="$page.url.startsWith('/users')">Users</NavLink>
-
+				<NavLink href="/users" :active="$page.component === 'Users'">Users</NavLink>
 			</li>
 			<li>
-				<NavLink href="/settings" :active="$page.url.startsWith('/settings')">Settings</NavLink>
+                <NavLink href="/settings" :active="$page.component === 'Settings'">Settings</NavLink>
 			</li>
 			<li>
 				<NavLink href="/getout" :active="$page.url.startsWith('/getout')" method="post" :data="{ foo: 'bar' }"
@@ -23,6 +21,5 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
-import NavLink from '@/Components/NavLink.vue'
+import NavLink from '@/Shared/NavLink.vue'
 </script>
